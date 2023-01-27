@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Kvadrātvienādojumu risinātājs</title>
+
+<script>
+function KvVien() {
+    let a, b, c, d, x1, x2;
+	a = Number(prompt('Enter a value for a',0)); //otrā vērtība var būt ierakstīta pēdiņās, piem 'a' vai '0'...
+    b = Number(prompt('Enter a value for b',0));
+    c = Number(prompt('Enter a value for c',0));
+if(isNaN(a)||isNaN(b)||isNaN(c)){ /*|| - or - vai... var lietot a > 0 && b > 0 ...;*/
+	alert("Viens no skaitļiem ir teksts!");
+ }else{
+	d = Math.pow(b, 2) - 4 * a * c;
+if (d<0){
+alert("Risinājumu reālajos skaitļos nav!");
+}
+else if(d==0){
+    x1 = (-b) / 2 * a;
+	alert('vienīga sakne ir '+x1);
+
+	}
+else{
+    x1 = (-b + Math.sqrt(d)) / 2 * a;
+    x2 = (-b - Math.sqrt(d)) / 2 * a;
+
+	alert('pirmā sakne ir '+x1);
+    alert('otrā sakne ir '+x2);
+}
+}
+
+}
+
+</script>
+
+</head>
+<body>
+<h1>Kvadrātvieņadojumua risinājums 1</h1>
+<p>Kvadrātvienādojuma risinājumā izmantosim 3 <i>prompt</i> logus, vienu <i>button</i> pogu</p>
+<button type="button" onclick="KvVien()">Atrisināt kvadrātvienādojumu</button>
+</body>
+</html>
