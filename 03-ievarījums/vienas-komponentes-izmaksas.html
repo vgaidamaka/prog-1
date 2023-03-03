@@ -5,7 +5,19 @@
 <title>Vecmamiņas ievārījums</title>
 <script>
 
+function komponentesIzmaksas(daudzumsKg,cenaIep,iepSvarsKg){
+komponentesIzmaksas=daudzumsKg*cenaIep/iepSvarsKg;
+return komponentesIzmaksas;
+}
 
+function ievarijums(){
+let a,b,c,result;
+a=parseFloat(prompt("Ābolu cenu iepakojumā, eur",0));
+b=parseFloat(prompt("Ābolu svaru iepakojumā, kg",0));
+c=parseFloat(prompt("Ābolu svaru receptei, kg",0));
+result=komponentesIzmaksas(c,a,b);
+alert("Āboli 1 receptei izmaksāsies "+result+" eiro");
+}
 
 </script>
 </head>

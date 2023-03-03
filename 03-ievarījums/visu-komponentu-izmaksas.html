@@ -5,7 +5,40 @@
 <title>Vecmamiņas ievārījums</title>
 <script>
 
+function komponentesIzmaksas(daudzumsKg,cenaIep,iepSvarsKg){
+let komponentesIzmaksas=daudzumsKg*cenaIep/iepSvarsKg;
+return komponentesIzmaksas;
+}
 
+function ievarijums(){
+let a,b,c,tekstaVirkne;
+let result=0;
+tekstaVirkne="";
+
+a=parseFloat(prompt("Ābolu cena iepakojumā, eur",0));
+b=parseFloat(prompt("Ābolu svars iepakojumā, kg",0));
+//c=parseFloat(prompt("Ābolu svars receptei, kg",0));
+c=3;
+result=result+komponentesIzmaksas(c,a,b);
+tekstaVirkne=tekstaVirkne+"Ābolu izmaksas, eur "+result+"<br>";
+
+a=parseFloat(prompt("Ūdens cena iepakojumā, eur",0));
+b=parseFloat(prompt("Ūdens svars iepakojumā, kg",0));
+//c=parseFloat(prompt("Ūdens svars receptei, kg",0));
+c=0.2;
+result=result+komponentesIzmaksas(c,a,b);
+tekstaVirkne=tekstaVirkne+"Ūdens izmaksas, eur "+result+"<br>";
+
+a=parseFloat(prompt("Cukura cena iepakojumā, eur",0));
+b=parseFloat(prompt("Cukura svars iepakojumā, kg",0));
+//c=parseFloat(prompt("Cukura svars receptei, kg",0));
+c=1.5;
+result=result+komponentesIzmaksas(c,a,b);
+tekstaVirkne=tekstaVirkne+"Cukura izmaksas, eur "+result+"<br>";
+
+document.getElementById("kopa").innerHTML="recepte izmaksāsies izmaksāsies "+result+" eiro"+"</br>";
+document.getElementById("saraksts").innerHTML=tekstaVirkne;
+}
 
 </script>
 </head>
@@ -33,6 +66,9 @@ Vāra ābolus nelielā ūdens daudzumā uz mazas uguns, līdz tie ir mīksti. Ja
 
 <div>
 <button onclick="ievarijums()">Aprēķināt 1kg</button>
+<p>Receptei nepieciešams:</p>
+<p id="saraksts">...</p>
+<p id="kopa">...</p>
 </div>
 </body>
 </html>

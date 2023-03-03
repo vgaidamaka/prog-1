@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Virsraksts</title>
+<script>
+let opKods;
+function pogasKods(kods){
+alert("Nospiesta poga: "+kods);
+opKods=kods;
+}
+
+function siDiena()
+{
+//let day;
+let gebi=document.getElementById("izvade");
+switch (opKods) {
+  case 1:
+    day = "Summa";
+    break;
+  case 2:
+     day = "Starpība";
+    break;
+  case 3:
+    day = "Reizināšana";
+    break;
+  case 4:
+    day = "Dalīšana";
+    break;
+
+}
+gebi.innerHTML=day;
+}
+
+</script>
+</head>
+<body>
+<h1>Uzdevuma nosaukums</h1>
+<p>Nosacījuma apraksts</p>
+<p id="izvade"> </p>
+<input type="input" value=0 id="izvade">
+<input type="button" value="=" onclick="siDiena()">
+<br>
+<input type="button" value="+" onclick="pogasKods(1)"><input type="button" value="-" onclick="pogasKods(2)"><br>
+<input type="button" value="*" onclick="pogasKods(3)"><input type="button" value="/" onclick="pogasKods(4)">
+</body>
+</html>
