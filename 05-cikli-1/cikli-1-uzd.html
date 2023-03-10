@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Virsraksts</title>
+<script>
+function numbersPrint() {
+    var n, a;0
+     a=document.getElementById("numbersToOutput");
+	 b=document.getElementById("zerosToOutput");
+//   n = Number(window.prompt('Enter a value for n'));
+     n = Number(document.getElementById("numberToCount").value);
+    var i;
+//    var tekstaVirkne="0";
+	var nulluVirkne="";
+    for (i = 0; i <n; i++) {
+	a.innerHTML+=" "+(i+1);
+//	tekstaVirkne=tekstaVirkne + " " + (i+1);
+	nulluVirkne=nulluVirkne + "0";
+	}
+//	a.innerHTML=tekstaVirkne;
+	b.innerHTML=nulluVirkne;
+}
+</script>
+
+</head>
+<body>
+<h1>Uzdevuma nosaukums</h1>
+<p>Nosacījuma apraksts</p>
+<input id="numberToCount" type="text" value="0">
+<input type="button" value="Go!" onclick="numbersPrint()">
+<p id="numbersToOutput">0</p>
+<p id="zerosToOutput">...</p>
+</body>
+</html>
